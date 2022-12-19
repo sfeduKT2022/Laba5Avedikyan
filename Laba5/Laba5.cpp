@@ -13,7 +13,7 @@ struct buyer
 	int credit;
 };
 
-void SortHeight(buyer** q, int k)
+void Sort(buyer** q, int k)
 {
 	for (int i = 1; i < k + 1; i++)
 		for (int j = 1; j < k - i + 1; i++)
@@ -304,7 +304,7 @@ int main()
 	cin >> otvet;
 	if (otvet == '1')
 	{
-		SortHeight(q, k);
+		Sort(q, k);
 		for (int i = 1; i < k + 1; i++)
 		{
 			cout << i << " Покупатель: ";
