@@ -15,8 +15,8 @@ struct buyer
 
 void Sort(buyer** q, int k)
 {
-	for (int i = 1; i < k + 1; i++)
-		for (int j = 1; j < k - i + 1; i++)
+	for (int i = 0; i < k; i++)
+		for (int j = 0; j < k - i; i++)
 			if (q[j]->code > q[j + 1]->code)
 			{
 				buyer* temp = q[j];
@@ -42,7 +42,7 @@ int main()
 
 	// Ввод
 
-	for (int i = 0; i < n + 1; i++) 
+	for (int i = 0; i < n; i++) 
 	{
 		cout << endl;
 		cout << "Введите фамилию " << i << " покупателя: ";
@@ -85,7 +85,7 @@ int main()
 	file.close();
 
 	buyer** q = new buyer * [n];
-	for (int i = 1; i < k + 1; i++)
+	for (int i = 0; i < k; i++)
 		q[i] = &h[i];
 
 
@@ -115,7 +115,7 @@ int main()
 			string znachenie;
 			cout << endl << "Введите фамилию: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].surname)
 				{
@@ -133,7 +133,7 @@ int main()
 			string znachenie;
 			cout << "Введите имя: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].name)
 				{
@@ -151,7 +151,7 @@ int main()
 			string znachenie;
 			cout << "Введите отчество: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].patronymic)
 				{
@@ -171,7 +171,7 @@ int main()
 			string znachenie;
 			cout << "Введите город: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].address.city)
 				{
@@ -189,7 +189,7 @@ int main()
 			string znachenie;
 			cout << "Введите улицу: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].address.street)
 				{
@@ -207,7 +207,7 @@ int main()
 			int znachenie;
 			cout << "Введите номер дома: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].address.home)
 				{
@@ -225,7 +225,7 @@ int main()
 			int znachenie;
 			cout << "Введите номер квартиры: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].address.kv)
 				{
@@ -243,7 +243,7 @@ int main()
 			int znachenie;
 			cout << "Введите номер кредитной карты: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].credit)
 				{
@@ -261,7 +261,7 @@ int main()
 			int znachenie;
 			cout << "Введите код покупки: ";
 			cin >> znachenie;
-			for (int i = 1; i < k + 1; i++)
+			for (int i = 0; i < k; i++)
 			{
 				if (znachenie == h[i].code)
 				{
@@ -283,7 +283,7 @@ int main()
 	cin >> otvet;
 	if (otvet == '1')
 	{
-		for (int i = 1; i < k + 1; i++)
+		for (int i = 0; i < k; i++)
 		{
 			cout << endl;
 			cout << i << " Покупатель: ";
@@ -305,7 +305,7 @@ int main()
 	if (otvet == '1')
 	{
 		Sort(q, k);
-		for (int i = 1; i < k + 1; i++)
+		for (int i = 0; i < k; i++)
 		{
 			cout << i << " Покупатель: ";
 			cout << q[i]->surname << "	" << q[i]->name << "	"
